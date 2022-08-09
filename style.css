@@ -1,0 +1,285 @@
+/*/////////////////////// REGRAS /////////////////////*/
+*, *::after, *::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  font-size: 62.5%; /* 1rem = 10px*/
+  font-family: 'Manrope', sans-serif;
+  --backgrond: #000000;
+  --text-color: #FFF;
+  --button: #8257E5;
+  --border: #29292E;
+  --border-menu-mobile: #A8A8B3;
+  --text-color-menu-mobile: #E1E1E6;
+}
+body{ 
+  margin:0;
+  background-color: var(--backgrond);
+  background-image: url(./assets/blur-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*
+////////////////////// MENU (MOB) ///////////////////////////
+*/
+.menu img:nth-child(2){
+  display: none;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+  margin-top: 3.7rem;
+  height: 5.8rem;
+  border-bottom: 1px solid var(--border-menu-mobile);
+}
+nav ul li a{
+  text-decoration: none;
+  color: #f8f9f7;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+header h1{
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 4rem;
+  letter-spacing: 0.02em;
+  margin-top: 9rem;
+  padding-inline: 1rem;
+}
+/*
+///////////////// NAV MENU MOBILE //////////////////////////
+*/
+.button-menu{
+  display: none;  /*BOTAO DESKTOP*/
+}
+.nav-menu{
+  display: none;
+}
+.on img:nth-child(1){
+  display: none;
+}
+.on img:nth-child(2){
+  display: inline;
+}
+.on .nav-menu{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 9.5rem;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  gap: 0;
+  background-color: #000000;
+}
+.on .nav-menu li{
+  font-size: 2rem;
+  display: flex;
+  border-bottom: 1px solid var(--border-menu-mobile);
+  padding-block: 1rem;
+  padding-left: 1rem;
+  margin: 0;
+}
+.Off{
+  visibility: hidden;
+}
+/*
+///////////////////////// PEGAR MEU CAFÉ (MOB) //////////////////
+*/
+main .button-content{
+  display: flex;
+  gap: 1rem;
+  margin-block: 1rem;
+  margin-inline: 3rem;
+}
+main .wrap-button{
+  display: flex;
+}
+main .button{
+  display: flex;
+  /* width: 20.6rem; */
+  border: 1px solid var(--button);
+  border-radius: 0.6rem;
+  color: var(--text-color);
+  margin-block: 9rem;
+  margin-inline: auto;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+  transition: 0.3s;
+}
+main .button:hover{
+  background-color: var(--button);
+  cursor: pointer;
+}
+/*
+/////////////////// GREAT CODE (MOB) /////////////////////////////
+*/
+.box{
+  display: flex;
+  color: var(--text-color);
+  flex-direction: column;
+  font-size: 4rem;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+.box div:nth-child(2){
+  color: var(--backgrond);
+  -webkit-text-stroke: var(--button) 1px;
+}
+.coffe{
+  display: block;
+  /* position: relative; */
+  width: 100%;
+}
+
+/*
+
+
+
+
+/////////////////////// DESKTOP /////////////////////
+
+
+
+
+*/
+@media(min-width: 720px) {
+  ::-webkit-scrollbar{
+    width: 15px;
+    background-color: #332555;
+  }
+  ::-webkit-scrollbar-button{
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: #808080;
+    border-radius: 15px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: #555555;
+    border-radius: 15px;
+  }
+  ::-webkit-scrollbar-track, 
+  ::-webkit-scrollbar-track-piece{
+    border-radius: 15px;
+  }
+  body{ 
+    background-color: var(--backgrond);
+    margin:0;
+    background-image: url(./assets/blur-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /*
+  ////////////////// BACKGROUND/////////////////////////
+  */
+  body{
+    background:url(./assets/blur-1.png), url(./assets/blur-2.png);
+    background-color: black;
+    background-size: cover;
+    margin: 0;
+  }
+  /*
+  ///////////////////////////// MENU //////////////////////
+  */ 
+  .nav-menu{
+    display: flex;
+    gap: 3rem;
+  }
+  nav section .hamburguerClose{
+    position: absolute;
+    visibility: hidden;
+  }
+  .menu img:first-child{
+    display: none;
+    background-repeat: no-repeat;
+  }
+  .menu img:nth-child(2){
+    display: flex;
+  }
+  .menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    margin-top: 3.7rem;
+    height: 5.8rem;
+    border-bottom: 0;
+  }
+  /* section{
+    display: flex;
+    align-items: center;
+  } */
+  /* nav{
+    display: flex;
+    align-items: center;
+  } */
+  .button-content-menu{
+    display: flex;
+    margin-block: 1rem;
+    margin-inline: 3rem;
+  }
+  .button-menu{
+    display: flex;
+    width: 19rem;
+    border: 1px solid var(--button);
+    border-radius: 0.6rem;
+    color: var(--text-color);
+    text-decoration: none;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  .button-menu:hover{
+    background-color: var(--button);
+    cursor: pointer;
+  } 
+  /*///////////////////////// PEGAR MEU CAFÉ MEIO DA TELA (NONE) //////////////////*/
+  main .button-content, 
+  main .button, 
+  header h1{
+    display: none;
+  }
+  /*/////////////////// GREAT CODE (DESKTOP) /////////////////////////////*/
+  .box{
+    display: flex;
+    color: var(--text-color);
+    flex-direction: column;
+    font-size: 8rem;
+    align-items: center;
+    font-weight: 700;
+    margin-block: 4rem;
+    line-height: 11rem;
+    letter-spacing: -0.03em;
+  }
+  .box div:nth-child(2){
+    color: var(--backgrond);
+    -webkit-text-stroke: var(--button) 1px;
+  }
+  .coffe, .menu{
+    /*MAIS ATRIBUTOS NO MOBILE*/
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}
+@media(min-width: 720px){
+  
+}
+@media(min-width: 820px){
+  .nav-menu{
+    display: flex;
+    gap: 3rem;
+    position: relative;
+    left: 7.3rem;
+  }
+}
