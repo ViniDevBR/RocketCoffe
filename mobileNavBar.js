@@ -1,6 +1,6 @@
 const hamburguerOpen = document.querySelector('.hamburguerOpen')
 const hamburguerClose = document.querySelector('.hamburguerClose')
-const sectionNavMenu = document.querySelector('section')
+const sectionNavMenu = document.querySelector('.containerNav')
 const coffeOff = document.querySelector('.coffe')
 
 hamburguerOpen.addEventListener('click', () =>{
