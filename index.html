@@ -13,11 +13,11 @@
   <script src="./mobileNavBar.js" defer></script>
   <body>
     <header>
-      <div class="menu">
+     <!--  <div class="menu"> -->
         <img src="assets/logo-mobile.svg" alt="LOGO ROCKETSEAT"> <!--LOGO MOBILE-->
         <img src="./assets/logo-desktop.svg" alt="LOGO ROCKETSEAT"> <!--LOGO DESKTOP-->
         <nav>
-          <section>
+          <div class="containerNav">
             <img class="hamburguerOpen" src="assets/menu-buguer-open.svg" alt="ABRIR MENU">
             <img class="hamburguerClose" src="./assets/menu-buguer-close.svg" alt="FECHAR MENU">
             <ul class="nav-menu">
@@ -27,19 +27,19 @@
               <li><a href="#">Gift Cards</a></li>
               <li><a href="#">Lojas</a></li>
             </ul>
-          </section>
+          </div>
         </nav>
         <a class="button-menu" href="#">
           <div class="button-content-menu">
             <p>PEGAR MEU CAFÉ</p>
           </div>
         </a>
-      </div>
+     <!--  </div> -->
+    </header>
+    <main>
       <h1>
         O café que fará seu código decolar para o próximo nível
       </h1>
-    </header>
-    <main>
       <div class="wrap-button">
         <a class="button" href="#">
           <div class="button-content">
@@ -48,15 +48,17 @@
           </div>
         </a>
       </div>
+    </main>   
+    <section>
       <div class="box">
-        <div> 
+        <p> 
           Great Coffe
-        </div>
-        <div>
+        </p>
+        <p>
           &lt;Great Code/&gt;
-        </div>     
+        </p>     
       </div>
       <img class="coffe" src="assets/rocket-coffee.png" alt="">
-    </main>   
+    </section>  
   </body>
 </html>
