@@ -1,4 +1,3 @@
-/*/////////////////////// REGRAS /////////////////////*/
 *, *::after, *::before{
   box-sizing: border-box;
   margin: 0;
@@ -20,14 +19,17 @@ body{
   background-image: url(./assets/blur-mobile.png);
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
 }
-/*
-////////////////////// MENU (MOB) ///////////////////////////
-*/
-.menu img:nth-child(2){
+
+/*/////////////////////////////
+              HEADER  
+/////////////////////////////*/
+
+header img:nth-child(2){
   display: none;
 }
-.menu{
+header{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,33 +38,39 @@ body{
   height: 5.8rem;
   border-bottom: 1px solid var(--border-menu-mobile);
 }
-nav ul li a{
-  text-decoration: none;
+
+/*/////////////////////////////
+              NAV
+/////////////////////////////*/
+
+nav li a{
   color: #f8f9f7;
+  text-decoration: none;
+  padding: 1rem 0 1rem 1rem;
+  width: 100%;
 }
 nav ul{
+  position: absolute;
+  right: -100%;
+  top: 9.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-size: 2rem;
   list-style: none;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  transition: right 0.5s;
 }
-header h1{
-  color: var(--text-color);
-  text-align: center;
-  font-weight: 400;
-  font-size: 3rem;
-  line-height: 4rem;
-  letter-spacing: 0.02em;
-  margin-top: 9rem;
-  padding-inline: 1rem;
+nav ul li{
+  display: flex;
+  border-bottom: 1px solid var(--border-menu-mobile);
 }
-/*
-///////////////// NAV MENU MOBILE //////////////////////////
-*/
+.on ul{
+  right: 0;
+}
 .button-menu{
   display: none;  /*BOTAO DESKTOP*/
-}
-.nav-menu{
-  display: none;
 }
 .on img:nth-child(1){
   display: none;
@@ -70,52 +78,42 @@ header h1{
 .on img:nth-child(2){
   display: inline;
 }
-.on .nav-menu{
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 9.5rem;
-  left: 0;
-  width: 100%;
-  height: 140%;
-  gap: 0;
-  background-color: #000000;
-}
-.on .nav-menu li{
-  font-size: 2rem;
-  display: flex;
-  border-bottom: 1px solid var(--border-menu-mobile);
-  padding-block: 1rem;
-  padding-left: 1rem;
-  margin: 0;
-}
-.Off{
+/* .Off{
   visibility: hidden;
-}
-/*
-///////////////////////// PEGAR MEU CAFÉ (MOB) //////////////////
-*/
-main .button-content{
-  display: flex;
-  gap: 1rem;
-  margin-block: 1rem;
-  margin-inline: 3rem;
+} */
+
+/*/////////////////////////////
+            MAIN
+/////////////////////////////*/
+
+main h1{
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 4rem;
+  letter-spacing: 0.02rem;
+  margin-block: 9rem;
+  padding-inline: 1rem;
 }
 main .wrap-button{
   display: flex;
 }
 main .button{
   display: flex;
-  /* width: 20.6rem; */
   border: 1px solid var(--button);
   border-radius: 0.6rem;
   color: var(--text-color);
-  margin-block: 9rem;
-  margin-inline: auto;
+  margin: 0 auto 9rem auto;
   align-items: center;
   text-decoration: none;
   justify-content: center;
   transition: 0.3s;
+}
+main .button-content{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 3rem 1rem 3rem;
 }
 main .button:hover{
   background-color: var(--button);
@@ -133,20 +131,15 @@ main .button:hover{
   font-weight: 600;
   margin-bottom: 3rem;
 }
-.box div:nth-child(2){
+.box p:nth-child(2){
   color: var(--backgrond);
   -webkit-text-stroke: var(--button) 1px;
 }
 .coffe{
   display: block;
-  /* position: relative; */
   width: 100%;
 }
-
 /*
-
-
-
 
 /////////////////////// DESKTOP /////////////////////
 
