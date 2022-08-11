@@ -231,13 +231,38 @@ section{
   }
   nav ul li{
     border-bottom: 0;
-    transition: 1s;
+  }
+  nav ul li::after{
+    content: "";
+    position: absolute;
+    top: 75px;
+    width: 0;  
+    opacity: 0; 
+    border-bottom: 1px solid #8257E5;
+    transition: width .5s, opacity 1s;
+  }
+  nav ul li:nth-child(1):hover::after{
+    opacity: 1;
+    width: 50px;
+  }
+  nav ul li:nth-child(2):hover::after{
+    opacity: 1;
+    width: 49px;
+  }
+  nav ul li:nth-child(3):hover::after{
+    opacity: 1;
+    width: 115px;
+  }
+  nav ul li:nth-child(4):hover::after{
+    opacity: 1;
+    width: 82px;
+  }
+  nav ul li:nth-child(5):hover::after{
+    opacity: 1;
+    width: 47px;
   }
   nav li a{
     padding: 0.3rem;
-  }
-  nav li:hover{
-    border-bottom:1px solid #8257E5;
   }
   nav .hamburguerClose{
     position: absolute;
