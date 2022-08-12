@@ -155,14 +155,13 @@ section{
 }
 .coffe{
   width: 100%;
-  max-width: 500px;
 }
 
 /*/////////////////////////////
             DESKTOP
 /////////////////////////////*/
 
-@media(min-width: 720px) {
+@media(min-width: 750px) {
   ::-webkit-scrollbar{
     width: 15px;
     background-color: #332555;
@@ -202,7 +201,7 @@ section{
   }
   header img:nth-child(2),
   header .wrap-button{
-    display: flex;
+    display: block;
   }
   header{
     display: flex;
@@ -211,10 +210,6 @@ section{
     padding-inline: 2rem;
     border-bottom: 0;
   }
-  .coffe, header{
-      max-width: 900px;
-      margin-inline: auto;
-    }
 
   /*///////////////////////// NAV //////////////////////*/ 
   
@@ -227,42 +222,34 @@ section{
     height: auto;
     background-color: transparent;
     font-size: 1.7rem;
-    gap: 10px;
+    gap: 2rem;
   }
   nav ul li{
     border-bottom: 0;
   }
-  nav ul li::after{
+  .menuOption{
+    position: relative;
+    transition: .3s;
+  }
+  .menuOption:hover{
+    transform: scale(1.1);
+  }
+  .menuOption::after{
     content: "";
     position: absolute;
-    top: 75px;
-    width: 0;  
+    bottom: 0;
+    height: 1px;
+    width: 0;
     opacity: 0; 
-    border-bottom: 1px solid #8257E5;
+    background-color: #8257E5;
     transition: width .5s, opacity 1s;
   }
-  nav ul li:nth-child(1):hover::after{
+  .menuOption:hover::after{
     opacity: 1;
-    width: 50px;
-  }
-  nav ul li:nth-child(2):hover::after{
-    opacity: 1;
-    width: 49px;
-  }
-  nav ul li:nth-child(3):hover::after{
-    opacity: 1;
-    width: 115px;
-  }
-  nav ul li:nth-child(4):hover::after{
-    opacity: 1;
-    width: 82px;
-  }
-  nav ul li:nth-child(5):hover::after{
-    opacity: 1;
-    width: 47px;
+    width: 100%;
   }
   nav li a{
-    padding: 0.3rem;
+    padding: 0;
   }
   nav .hamburguerClose{
     position: absolute;
@@ -284,5 +271,18 @@ section{
     margin-block: 4rem;
     line-height: 11rem;
     letter-spacing: -0.03em;
+  }
+}
+
+@media(min-width: 850px) {
+  header img:nth-child(2),
+  nav{
+   justify-self: center; 
+  }
+  header{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    border-bottom: 0;
+    padding-inline: 0;
   }
 }
