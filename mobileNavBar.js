@@ -1,14 +1,14 @@
+const body = document.querySelector('body')
 const hamburguerOpen = document.querySelector('.hamburguerOpen')
 const hamburguerClose = document.querySelector('.hamburguerClose')
-const sectionNavMenu = document.querySelector('.containerNav')
-const coffeOff = document.querySelector('.coffe')
+const navMenu = document.querySelector('.containerNav')
 
 hamburguerOpen.addEventListener('click', () =>{
-  sectionNavMenu.classList.add('on')
-  coffeOff.classList.add('Off')
+  navMenu.classList.add('on')
+  body.classList.add('menuOpen')
 })
 
 hamburguerClose.addEventListener('click', () =>{
-  sectionNavMenu.classList.remove('on')
-  coffeOff.classList.remove('Off')
+  navMenu.classList.remove('on')
+  body.classList.remove('menuOpen')
 })
