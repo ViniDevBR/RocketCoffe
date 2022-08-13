@@ -2,6 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
 :root{
   font-size: 62.5%; /* 1rem = 10px*/
@@ -31,7 +33,8 @@ body.menuOpen{
 /////////////////////////////*/
 
 header img:nth-child(2),
-header .wrap-button{
+header .wrap-button,
+.blur{
   display: none;
 }
 header{
@@ -61,7 +64,6 @@ nav ul{
   width: 100%;
   height: 100%;
   font-size: 2rem;
-  list-style: none;
   background-color: var(--background);
   transition: right 0.5s;
 }
@@ -71,7 +73,6 @@ nav ul li{
 }
 nav li a{
   color: var(--text-color3);
-  text-decoration: none;
   padding: 1rem 0 1rem 1rem;
   width: 100%;
 }
@@ -117,7 +118,6 @@ button{
   gap: 1rem;
   padding: 1rem 3rem;
   border-radius: 6px;
-  text-decoration: none;
   color: var(--text-color);
 }
 button:hover{
@@ -125,7 +125,7 @@ button:hover{
   cursor: pointer;
 }
 button:hover img{
-  animation: translateX 2s infinite ;
+  animation: translateX 2s alternate infinite both ;
 }
 @keyframes translateX {
   100%{
@@ -153,12 +153,26 @@ section{
 }
 .box p:nth-child(2){
   color: var(--text-color2);
-  -webkit-text-stroke: var(--button) 1px;
+  text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button),
+  -1px 1px 0 var(--button), 1px 1px 0 var(--button);
 }
 .coffe{
   width: 100%;
+  animation: shadow 20s alternate infinite both;
 }
+@keyframes shadow {
+  20% {
+    filter: drop-shadow(0 -1rem 8rem var(--button));
+  }
 
+  45% {
+    filter: drop-shadow(0 -1rem 4.5rem var(--button));
+  }
+
+  85% {
+    filter: drop-shadow(0 -1rem 8.1rem var(--button));
+  }
+}
 /*/////////////////////////////
             DESKTOP
 /////////////////////////////*/
@@ -185,7 +199,7 @@ section{
   }
 
   /*////////////////// BACKGROUND /////////////////////////*/
-  
+
   body{
     background:url(./assets/blur-1.png), url(./assets/blur-2.png);
     background-color: var(--background);
@@ -257,9 +271,6 @@ section{
     line-height: 11rem;
     letter-spacing: -0.03em;
   }
-  .box p:nth-child(2){
-    -webkit-text-stroke: var(--button) 2px;
-  }
 
   /*///////////////////////// NONE //////////////////////*/ 
 
@@ -290,13 +301,16 @@ section{
   .coffe{
     max-width: 90%;
   }
-
 }
+
 /*/////////////////////////////
             1400px
 /////////////////////////////*/
 
 @media(min-width: 1400px) {
+  header{
+    margin-top: 7rem;
+  }
   header img:nth-child(2){
     width: 55px;
   }
@@ -317,7 +331,7 @@ section{
   }
   .box{
     font-size: 9rem;
-    margin-block: 5rem;
+    margin-block: 7rem;
   }
   .coffe{
     max-width: 1810px;
@@ -329,6 +343,9 @@ section{
 /////////////////////////////*/
 
 @media(min-width: 2500px) {
+  header{
+    margin-top: 9rem;
+  }
   header img:nth-child(2){
     width: 65px;
   }
@@ -342,13 +359,11 @@ section{
   }
   nav ul{ 
     font-size: 3.5rem;
+    gap: 5rem;
   }
   .box{
     font-size: 12rem;
-    margin-block: 10rem;
-  }
-  .box p:nth-child(2){
-    -webkit-text-stroke: var(--button) 3px;
+    margin-block: 15rem;
   }
   .coffe{
     max-width: 70%;
