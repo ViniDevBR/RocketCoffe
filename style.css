@@ -15,12 +15,14 @@
   --text-color-menu-mobile: #E1E1E6;
 }
 body{ 
-  margin:0;
   background-color: var(--background);
   background-image: url(./assets/blur-mobile.png);
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
+}
+body.menuOpen{
+  overflow: hidden;
 }
 
 /*/////////////////////////////
@@ -49,28 +51,28 @@ header{
               NAV
 /////////////////////////////*/
 
-nav li a{
-  color: #f8f9f7;
-  text-decoration: none;
-  padding: 1rem 0 1rem 1rem;
-  width: 100%;
-}
 nav ul{
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
   right: -100%;
   top: 9.5rem;
   width: 100%;
   height: 100%;
-  background-color: var(--background);
   font-size: 2rem;
   list-style: none;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--background);
   transition: right 0.5s;
 }
 nav ul li{
   display: flex;
   border-bottom: 1px solid var(--border-menu-mobile);
+}
+nav li a{
+  color: #f8f9f7;
+  text-decoration: none;
+  padding: 1rem 0 1rem 1rem;
+  width: 100%;
 }
 .on ul{
   right: 0;
@@ -81,19 +83,11 @@ nav ul li{
 .on img:nth-child(2){
   display: inline;
 }
-/* .Off{
-  visibility: hidden;
-} */
 
 /*/////////////////////////////
             MAIN
 /////////////////////////////*/
 
-main .wrap-button{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 9rem;
-}
 main h1{
   color: var(--text-color);
   text-align: center;
@@ -103,6 +97,11 @@ main h1{
   letter-spacing: 0.02rem;
   margin-block: 9rem;
   padding-inline: 1rem;
+}
+main .wrap-button{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 9rem;
 }
 button{
   display: flex;
@@ -125,16 +124,18 @@ button:hover{
   cursor: pointer;
 }
 button:hover img{
-  animation: translateX 2s infinite;
+  animation: translateX 2s infinite ;
 }
 @keyframes translateX {
   100%{
     transform: translateX(8px);
   }
 }
+
 /*/////////////////////////////
           GREAT COFFE
 /////////////////////////////*/
+
 section{
   display: flex;
   flex-direction: column;
@@ -181,24 +182,18 @@ section{
   ::-webkit-scrollbar-track-piece{
     border-radius: 15px;
   }
-  body{ 
-    background-image: url(./assets/blur-mobile.png);
-  }
 
   /*////////////////// BACKGROUND /////////////////////////*/
   
   body{
     background:url(./assets/blur-1.png), url(./assets/blur-2.png);
-    background-color: black;
+    background-color: var(--background);
     background-size: cover;
-    margin: 0;
+    background-repeat: no-repeat;
   }
 
   /*///////////////////////// HEADER //////////////////////*/ 
 
-  header img:first-child{
-    display: none;
-  }
   header img:nth-child(2),
   header .wrap-button{
     display: block;
@@ -227,6 +222,9 @@ section{
   nav ul li{
     border-bottom: 0;
   }
+  nav li a{
+    padding: 0;
+  }
   .menuOption{
     position: relative;
     transition: .3s;
@@ -248,20 +246,7 @@ section{
     opacity: 1;
     width: 100%;
   }
-  nav li a{
-    padding: 0;
-  }
-  nav .hamburguerClose{
-    position: absolute;
-    right: -100%;
-  }
-
-  /*//////////////////// MAIN (NONE) //////////////////*/
   
-  main h1,
-  main .wrap-button{
-    display: none;
-  }
 
   /*/////////////////// GREAT CODE //////////////////////*/
   
@@ -272,6 +257,16 @@ section{
     line-height: 11rem;
     letter-spacing: -0.03em;
   }
+
+  /*///////////////////////// NONE //////////////////////*/ 
+
+  header img:first-child,
+  main h1,
+  main .wrap-button,
+  body nav .hamburguerClose,
+  .on img:nth-child(2){
+    display: none;
+  } 
 }
 
 @media(min-width: 850px) {
@@ -284,5 +279,8 @@ section{
     grid-template-columns: 25% 50% 25%;
     border-bottom: 0;
     padding-inline: 0;
+  }
+  .coffe{
+    max-width: 90%;
   }
 }
