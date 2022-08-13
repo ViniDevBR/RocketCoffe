@@ -12,3 +12,5 @@ hamburguerClose.addEventListener('click', () =>{
   navMenu.classList.remove('on')
   body.classList.remove('menuOpen')
 })
+
+console.log('Open to work now!')
