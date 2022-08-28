@@ -6,3 +6,24 @@ $button: #8257e5;
 $border: #29292e;
 $border-menu-mobile: #a8a8b3;
 $text-color-menu-mobile: #e1e1e6;
+$scrollbar-colorA: #332555;
+$scrollbar-colorB: #808080;
+$scrollbar-colorC: #555555;
+
+:root{
+  font-size: 62.5%; /* 1rem = 10px*/
+  font-family: 'Manrope', sans-serif;
+}
+*, *::after, *::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+@mixin flex ($display, $justify, $align) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
